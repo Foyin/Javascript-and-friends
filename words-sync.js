@@ -1,11 +1,11 @@
 var fs = require('fs')
 
 var file = 'document.txt';
-var rawContents = fs.readfileSync(file, 'utf-8');
+var rawContents = fs.readFileSync(file, 'utf-8');
 var re = /\W/;
 var lines = rawContents.split(re);
 
-var findthis = "panda";
+var findthis = "Panda";
 var numfound = 0;
 
 var words = new Array();
@@ -21,5 +21,5 @@ for(i=0; i<lines.length; i++){
 
 var w = words.sort().join('\n');
 var callback = console.log("Finished");
-console.log("i found this many: "+numfound);
+console.log("i found "+findthis+" "+numfound+" times");
 fs.writeFileSync('wordlist.txt',w);
